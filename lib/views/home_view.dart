@@ -6,6 +6,13 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: CustomBody());
+    return Scaffold(
+      body: const CustomBody(),
+      floatingActionButton: CircleAvatar(
+        backgroundColor: Colors.blue,
+        radius: 30,
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }
