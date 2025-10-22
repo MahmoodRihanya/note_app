@@ -12,7 +12,11 @@ class CustomBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 40),
-          CustomAppBar(title: 'Notes', icon: Icons.search),
+          CustomAppBar(
+            title: 'Notes',
+            icon: Icons.search,
+            favouritIcon: Icons.favorite,
+          ),
           Expanded(child: NotesList()),
         ],
       ),

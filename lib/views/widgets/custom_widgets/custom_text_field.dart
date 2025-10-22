@@ -10,22 +10,30 @@ class CustomTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.onChanged,
+    required this.onSaved,
   });
   Function(String)? onChanged;
   String hintText;
-
+  void Function(String?) onSaved;
   int maxline;
+
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      onSaved: onSaved,
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return 'this field is required';
+        }
+      },
       maxLines: maxline,
       onChanged: onChanged,
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: kprimaryColor),
+        hintStyle: TextStyle(color: kPrimaryColor),
         enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(borderColor: kprimaryColor),
+        focusedBorder: buildBorder(borderColor: kPrimaryColor),
       ),
     );
   }

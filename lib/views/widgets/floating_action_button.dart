@@ -17,7 +17,7 @@ class CustomFloatingActionButton extends StatelessWidget {
         );
       },
       child: CircleAvatar(
-        backgroundColor: kprimaryColor,
+        backgroundColor: kPrimaryColor,
         radius: 30,
         child: Icon(Icons.add, color: Colors.black),
       ),
